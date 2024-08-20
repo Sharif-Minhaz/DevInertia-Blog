@@ -1,4 +1,11 @@
 export type TPost = {
+	id: string;
 	slug: string;
-	data: { heroImage: string; title: string; pubDate: Date };
+	data: {
+		heroImage?: string | undefined;
+		title: string;
+		pubDate: Date;
+		updatedDate?: Date | undefined;
+	};
+	[key: string]: unknown;
 };
