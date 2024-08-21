@@ -13,3 +13,13 @@ export type TPost = {
 	};
 	[key: string]: unknown;
 };
+
+type Post = {
+	title: string;
+	slug: string;
+};
+
+export type Info = {
+	tagName: string;
+	posts: Post[];
+};

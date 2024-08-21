@@ -1,11 +1,55 @@
 ---
+import { getCollection } from "astro:content";
 import MainLayout from "../layouts/MainLayout.astro";
+import type {Info} from "../../types"
 
+const posts = await getCollection('blog')
+
+const tags = posts.map((post) => post.data.tags).flat(); // merge all the tags from every posts
+const uniqueTags = Array.from(new Set(tags)) // get the unique tags
+
+// get tagged post for every tag
+const data = uniqueTags.map((tag) => {
+    const info:Info = {tagName: tag, posts:[]};
+    // checking all the post
+    posts.forEach(post => {
+        if(post.data.tags.includes(tag)) {
+            info.posts.push({title: post.data.title, slug: post.slug})
+        }
+    })
+
+    return info;
+})
 
 ---
-
+<style>
+    li {
+        text-indent: -24px;
+        padding-left: 38px;
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+</style>
 <MainLayout>
     <main>
-        Available tags
+        <h2>Available Tags</h2>
+        <div class="flex flex-wrap gap-3 mt-8 mb-10">
+            {uniqueTags.map((tag:string) => <a href={`#${tag}`}><span class="inline-flex text-[18px] px-4 py-1 items-center justify-center border text-slate-600 border-slate-300 dark:border-slate-700 dark:text-slate-300 rounded-full">#{tag}</span></a>)}
+        </div>
+        <hr />
+        <div class="mt-8">
+            {
+                data.map((tagged) => (
+                    <div class="mb-6">
+                        <h3 id={tagged.tagName}>{tagged.tagName}</h3>
+                        <ul>
+                            {tagged.posts.map((post) =><li>
+                                <a class="dark:text-blue-400 hover:underline" href={`/blog/view/${post.slug}`}>{post.title}</a>
+                            </li>)}
+                        </ul>
+                    </div>
+                ))
+            }
+        </div>
     </main>
 </MainLayout>
