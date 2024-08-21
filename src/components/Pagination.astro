@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } = Astro.props;
+const paginationList = Array.from({ length }, (_, i) => i + 1);
+---
+
+<style>
+	nav {
+		height: 44px;
+	}
+
+	span,
+	a {
+		font-size: 18px;
+		padding-block: 6px;
+		padding-inline: 12px;
+		height: 100%;
+	}
+</style>
+
+<nav aria-label="Blog pages" class="bg-slate-50 flex rounded-md border dark:border-slate-900 px-4">
+	{
+		`${firstUrl}/1` === currentUrl ? (
+			<span class="pagination__link disabled cursor-not-allowed inline-flex items-center justify-center">
+				<Icon name="mdi:chevron-double-left" size={22} />
+			</span>
+		) : (
+			<a href={`${firstUrl}/1`} class="pagination__link inline-flex items-center justify-center">
+				<Icon name="mdi:chevron-double-left" size={22} />
+			</a>
+		)
+	}
+
+	{
+		prevUrl ? (
+			<a
+				href={prevUrl}
+				class="pagination__link border dark:border-slate-900 inline-flex items-center justify-center"
+			>
+				<Icon name="mdi:chevron-left" size={22} />
+			</a>
+		) : (
+			<span class="pagination__link cursor-not-allowed disabled border dark:border-slate-900 inline-flex items-center justify-center">
+				<Icon name="mdi:chevron-left" size={22} />
+			</span>
+		)
+	}
+
+	<div class="flex">
+		{
+			paginationList.map((num) => (
+				<div class="select-none flex items-center">
+					{currentPage === num ? <span class="border cursor-not-allowed dark:border-slate-900 !px-4 inline-flex items-center justify-center bg-slate-100 dark:bg-slate-900 text-black dark:text-slate-300 font-semibold">{num}</span>:
+						<a
+							href={`${firstUrl}/${num}`}
+							class={`border dark:border-slate-900 !px-4 inline-flex items-center justify-center ${currentPage == num ? "bg-slate-100 text-black font-semibold" : ""}`}
+						>
+							{num}
+						</a>
+					}
+				</div>
+			))
+		}
+	</div>
+
+	{
+		!nextUrl ? (
+			<span class="pagination__link cursor-not-allowed disabled border dark:border-slate-900 inline-flex items-center justify-center">
+				<Icon name="mdi:chevron-right" size={22} />
+			</span>
+		) : (
+			<a
+				href={nextUrl}
+				class="pagination__link border dark:border-slate-900 inline-flex items-center justify-center"
+			>
+				<Icon name="mdi:chevron-right" size={22} />
+			</a>
+		)
+	}
+
+	{
+		lastUrl === currentUrl ? (
+			<span class="pagination__link cursor-not-allowed disabled inline-flex items-center justify-center">
+				<Icon name="mdi:chevron-double-right" size={22} />
+			</span>
+		) : (
+			<a href={lastUrl} class="pagination__link inline-flex items-center justify-center">
+				<Icon name="mdi:chevron-double-right" size={22} />
+			</a>
+		)
+	}
+</nav>

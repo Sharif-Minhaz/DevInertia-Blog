@@ -153,6 +153,10 @@ code {
 	background-color: #2e2e2e;
 }
 
+.dark pre code {
+	background-color: unset;
+}
+
 .dark #blog-body p {
 	color: var(--color-dark) !important;
 }
@@ -174,12 +178,16 @@ li {
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
-	margin-top: 14px;
+	/* margin-top: 14px; */
 	margin-bottom: 20px;
 }
 
 pre>code {
 	all: unset;
+}
+
+code span {
+	font-size: 17px;
 }
 
 blockquote {

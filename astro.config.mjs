@@ -16,7 +16,16 @@ export default defineConfig({
 		react(),
 		icon({
 			include: {
-				mdi: ["home-account", "blog-outline", "about-circle-outline", "tag-text"],
+				mdi: [
+					"home-account",
+					"blog-outline",
+					"about-circle-outline",
+					"tag-text",
+					"chevron-double-right",
+					"chevron-right",
+					"chevron-left",
+					"chevron-double-left",
+				],
 			},
 		}),
 	],
