@@ -1,9 +1,11 @@
 ---
 title: "Building Robust REST APIs with Python Flask: A Guide for Developers"
-description: "Lorem ipsum dolor sit amet"
+description: "In web development, creating robust and efficient RESTful APIs is essential for building scalable and interoperable applications. With the rise in demand for dynamic web services, developers are turning to lightweight frameworks like Flask to streamline the development process and deliver powerful APIs with minimal overhead. In this guide, we’ll explore how to leverage Python Flask to build RESTful APIs that meet the needs of modern web applications."
 pubDate: "Jul 08 2024"
 updatedDate: "Jul 08 2024"
-heroImage: "/flask.webp"
+heroImage: "/blog-thumbnails/flask.webp"
+author: "minhaz"
+tags: ["web", "apis", "python", "flask", "rest"]
 ---
 
 In web development, creating robust and efficient RESTful APIs is essential for building scalable and interoperable applications. With the rise in demand for dynamic web services, developers are turning to lightweight frameworks like Flask to streamline the development process and deliver powerful APIs with minimal overhead. In this guide, we’ll explore how to leverage Python Flask to build RESTful APIs that meet the needs of modern web applications.

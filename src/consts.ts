@@ -7,7 +7,18 @@ export const SITE_DESCRIPTION =
 
 export const NAV_LINKS = [
 	{ url: "/", name: "Home", icon: "mdi:home-account" },
-	{ url: "/blog", name: "Blog", icon: "mdi:blog-outline" },
+	{ url: "/blog/1", name: "Blog", icon: "mdi:blog-outline" },
 	{ url: "/tags", name: "Tags", icon: "mdi:tag-text" },
 	{ url: "/about", name: "About", icon: "mdi:about-circle-outline" },
 ];
+
+export const WRITERS = {
+	minhaz: {
+		name: "Sharif Md. Minhaz",
+		avatar: "/avatars/minhaz.jpg",
+	},
+	astro: {
+		name: "Astro Org.",
+		avatar: "/avatars/astro.png",
+	},
+};

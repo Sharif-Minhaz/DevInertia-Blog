@@ -1,0 +1,9 @@
+---
+const {data} = Astro.props;
+---
+
+<div class="flex items-center gap-2 dark:text-[#bfc1c9] text-[16px]">
+    <span>By</span>
+    <img class="my-0 inline-block rounded-full border border-slate-400 dark:border-gray-100 h-6 w-6 md:h-10 md:w-10" src={data.avatar} alt={data.name}>
+    <span>{data.name}</span>
+</div>

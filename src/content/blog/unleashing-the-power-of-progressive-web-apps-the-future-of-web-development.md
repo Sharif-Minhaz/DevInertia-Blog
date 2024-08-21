@@ -3,7 +3,9 @@ title: "Unleashing the Power of Progressive Web Apps: The Future of Web Developm
 description: "Lorem ipsum dolor sit amet"
 pubDate: "Jul 09 2024"
 updatedDate: "Jul 09 2024"
-heroImage: "/pwa.webp"
+heroImage: "/blog-thumbnails/pwa.webp"
+author: "minhaz"
+tags: ["web", "progressive-apps", "pwa"]
 ---
 
 In the current swiftly transforming digital sphere, providing a top-notch user experience is crucial. With people depending more and more on mobile gadgets and seeking quick, effortless interactions, developers are continuously striving to find ground-breaking techniques that fuse native apps with web experiences. This is where Progressive Web Apps (PWAs) come in as revolutionary tools for web development.
