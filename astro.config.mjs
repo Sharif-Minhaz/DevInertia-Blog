@@ -2,9 +2,10 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
-
+import pagefind from "astro-pagefind";
 import icon from "astro-icon";
+
+import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,7 +14,7 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		tailwind(),
-		react(),
+		pagefind(),
 		icon({
 			include: {
 				mdi: [
@@ -25,8 +26,11 @@ export default defineConfig({
 					"chevron-right",
 					"chevron-left",
 					"chevron-double-left",
+					"search",
+					"window-close",
 				],
 			},
 		}),
+		preact(),
 	],
 });

@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon/components";
+import SearchComponent from "astro-pagefind/components/Search";
+---
+
+<style>
+    #search-container {
+        position: absolute;
+        width: 530px;
+        left: 50%;
+        transform: translate(-50%);
+        top: 14px;
+        background-color: white;
+    }
+
+    @media (max-width: 880px) {
+        #search-container {
+            top: 90px;
+            width: calc(100% - 20px);
+        }
+    }
+</style>
+
+<div class="sm:border-r sm:dark:border-r-slate-800 sm:mr-1.5">
+    <Icon id="search-icon" name="mdi:search" size={32} class="sm:pr-2.5 cursor-pointer" />
+    <Icon id="search-icon-close" name="mdi:window-close" size={32} class="sm:pr-2.5 hidden cursor-pointer" />
+</div>
+
+<div class="hidden" id="search-container">
+    <SearchComponent id="search" className="pagefind-ui" />
+</div>
+
+<script is:inline>
+    const searchIcon = document.getElementById("search-icon");
+    const searchIconClose = document.getElementById("search-icon-close");
+    const searchBar = document.getElementById("search-container");
+
+    const toggleSearchItems = () => {
+        searchIcon.classList.toggle("hidden");
+        searchBar.classList.toggle("hidden")
+        searchIconClose.classList.toggle("hidden")
+    }
+
+    searchIcon.addEventListener("click", () => {
+        toggleSearchItems();
+    });
+
+    searchIconClose.addEventListener("click", () => {
+        toggleSearchItems();
+    });
+
+
+</script>
