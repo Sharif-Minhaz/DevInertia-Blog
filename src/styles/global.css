@@ -14,6 +14,7 @@
 	--border-dark: #2e2e2e;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
+	--pagefind-ui-scale: 0.8;
 	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
@@ -211,6 +212,83 @@ hr {
 	color: var(--color-dark) !important;
 }
 
+/* ------------- astro pagefind start --------------- */
+#search {
+	background-color: white;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.dark #search {
+	background-color: var(--dark-default);
+}
+
+.dark #search .pagefind-ui__form::before {
+	background-color: #ededed;
+}
+
+.dark #search input {
+	background-color: var(--dark-lite);
+	border-color: #181818;
+	color: #ededed;
+}
+
+.dark #search input:focus-visible {
+	outline: 1px solid rgb(22, 22, 22);
+}
+
+.dark #search .pagefind-ui__search-clear {
+	background-color: var(--dark-lite);
+	color: #ededed;
+}
+
+#search>* {
+	font-family: arial, Helvetica, sans-serif;
+}
+
+#search .pagefind-ui__drawer {
+	height: calc(100vh - 85px);
+	overflow-y: auto;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+#search .pagefind-ui__message {
+	padding-inline: 16px;
+}
+
+.dark #search .pagefind-ui__message {
+	color: #eeeeee;
+}
+
+#search .pagefind-ui__result-inner {
+	padding-right: 16px;
+}
+
+#search .pagefind-ui__result {
+	gap: min(calc(40px * var(--pagefind-ui-scale)), 5%);
+}
+
+.dark #search .pagefind-ui__result {
+	border-top-color: #181818;
+	border-bottom-color: #181818;
+}
+
+.dark #search .pagefind-ui__result-link {
+	color: whitesmoke;
+}
+
+#search .pagefind-ui__result-thumb {
+	padding-left: 16px;
+}
+
+#search .pagefind-ui__result-image {
+	margin-left: 16px;
+}
+
+/* ------------- astro pagefind end--------------- */
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
@@ -218,5 +296,10 @@ hr {
 
 	main {
 		padding: 1em;
+	}
+
+	#search .pagefind-ui__drawer {
+		height: auto;
+		overflow-y: unset;
 	}
 }

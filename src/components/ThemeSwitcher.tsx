@@ -55,7 +55,7 @@ const ThemeSwitcher = () => {
 		<div>
 			<div
 				onClick={setLightMode}
-				className="text-[32px] cursor-pointer"
+				className="text-[26px] sm:text-[32px] cursor-pointer"
 				id="light-icon"
 				style={{ display: "none" }}
 			>
@@ -72,7 +72,11 @@ const ThemeSwitcher = () => {
 				</svg>
 			</div>
 
-			<div onClick={setDarkMode} className="text-[32px] cursor-pointer" id="dark-icon">
+			<div
+				onClick={setDarkMode}
+				className="text-[26px] sm:text-[32px] cursor-pointer"
+				id="dark-icon"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="1em"

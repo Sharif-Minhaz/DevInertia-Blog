@@ -109,7 +109,7 @@ const { page } = Astro.props;
 						<div class="content">
 							<a href={`/blog/view/${post.slug}/`}>
 								<div class="parent">
-									<img width={720} class="object-cover h-full" src={post.data.heroImage} alt="" />
+									<img data-pagefind-meta="image[src], image_alt[alt]" width={720} class="object-cover h-full" src={post.data.heroImage} alt="" />
 								</div>
 								<h4 class="line-clamp-2 title" title={post.data.title}>{post.data.title}</h4>
 								<p class="date">

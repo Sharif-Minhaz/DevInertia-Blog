@@ -55,7 +55,7 @@ After completing my BSc, I want to improve my web development skills in Software
 
 <h2 class="text-[22px] mt-3">Key Skills in Web Development:</h2>
 
-<div class="flex gap-2 mt-4">
+<div class="flex flex-wrap gap-2 mt-4">
 <img alt="html5" title="html" width="45" hspace="5" src="/about/html5.svg" /><img alt="css3" title="css" width="45" hspace="5" src="/about/css3.svg" /><img alt="bootstrap" title="bootstrap" width="45" hspace="5" src="/about/bootstrap-round.png"  /><img alt="sass" title="sass" width="45" hspace="5" src="/about/sass-svg.png" /><img alt="javascript" title="javascript" width="45" hspace="5" src="/about/js-p.png" /><img alt="jquery" title="jquery" width="45" hspace="5" src="/about/jquery_icon.svg" /><img alt="react" title="react" width="45" hspace="5" src="/about/react.svg" /><img alt="node" title="node" width="45" hspace="5" src="/about/node.svg" /><img alt="express" title="express" width="45" hspace="5" src="/about/express.png" /><img alt="mongodb" title="mongodb" width="45" hspace="5" src="/about/mongodb.png" /><img alt="mongoose" title="mongoose" width="45" hspace="5" src="/about/mongoose.png" /><img alt="git" title="git" width="45" hspace="5" src="/about/git.png" /><img alt="github" title="github" width="45" hspace="5" src="/about/github.svg" /><img alt="sql" title="sql" width="45" hspace="5" src="/about/sql.png" />
 </div>
 <br />
@@ -100,15 +100,16 @@ After completing my BSc, I want to improve my web development skills in Software
 
 ### 💻 IDE & Code-Editors I Use:
 
-<img align="left" alt="vs-code" title="visual studio code" width="45" hspace="5" src="/about/Visual_Studio_Code.png" />
-<img align="left" alt="notepad++" title="notepad++" width="65" hspace="5" src="/about/notepadpp.png" />
-<img align="left" alt="code-block" title="code-blocks" width="45" hspace="5" src="/about/code_blocks.png" />
-<img align="left" alt="netbeans" title="netbeans" width="45" hspace="5" src="/about/netbeans-ide-logo.png" />
-<img align="left" alt="sql-server" title="sql-server" width="45" hspace="5" src="/about/sql-server.png" />
-<img align="left" alt="notepad" title="notepad" width="45" hspace="5" src="/about/notepad.png" />
-<img align="left" alt="py-charm" title="py-charm" width="45" hspace="5" src="/about/py-charm.png" />
-<img align="left" alt="IntelliJ_IDEA" title="IntelliJ IDEA" width="45" hspace="5" src="/about/IntelliJ_IDEA_Icon.png" />
-<br />
+<div class="flex flex-wrap gap-2 mt-4">
+    <img align="left" alt="vs-code" title="visual studio code" width="45" hspace="5" src="/about/Visual_Studio_Code.png" />
+    <img align="left" alt="notepad++" title="notepad++" width="65" hspace="5" src="/about/notepadpp.png" />
+    <img align="left" alt="code-block" title="code-blocks" width="45" hspace="5" src="/about/code_blocks.png" />
+    <img align="left" alt="netbeans" title="netbeans" width="45" hspace="5" src="/about/netbeans-ide-logo.png" />
+    <img align="left" alt="sql-server" title="sql-server" width="45" hspace="5" src="/about/sql-server.png" />
+    <img align="left" alt="notepad" title="notepad" width="45" hspace="5" src="/about/notepad.png" />
+    <img align="left" alt="py-charm" title="py-charm" width="45" hspace="5" src="/about/py-charm.png" />
+    <img align="left" alt="IntelliJ_IDEA" title="IntelliJ IDEA" width="45" hspace="5" src="/about/IntelliJ_IDEA_Icon.png" />
+</div>
 <br />
 <p>note: more tools to come.</p>
 <!-- other skills and my videos for the computer science section start here  -->
@@ -139,7 +140,7 @@ After completing my BSc, I want to improve my web development skills in Software
 <!-- my problem-solving section starts here  -->
 <br />
 
-<h2 class="text-[1.953em] mb-4">🧠Problem-solving on LeetCode:</h2>
+<h2 class="text-[1.5em] sm:text-[1.953em] mb-4">🧠Problem-solving on LeetCode:</h2>
 
 ![](https://leetcard.jacoblin.cool/user8365Lq?ext=activity&theme=nord)
 
