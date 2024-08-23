@@ -12,30 +12,47 @@ import SearchComponent from "astro-pagefind/components/Search";
         top: 14px;
     }
 
+    .shutter {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgb(0 0 0 / 0.8);
+    }
+
+    .dark #shutter {
+        background-color: red !important;
+    }
+
     @media (max-width: 880px) {
         #search-container {
-            top: 90px;
-            width: calc(100% - 20px);
+            top: 70px;
+            width: calc(100% - 30px);
         }
     }
 </style>
 
 <div class="text-[26px] sm:text-[36px] min-w-[40px] sm:border-r sm:dark:border-r-slate-800 sm:mr-1.5">
     <Icon id="search-icon" name="mdi:search" class="sm:pr-2.5 cursor-pointer" />
-    <Icon id="search-icon-close" name="mdi:window-close" class="sm:text-[32px] sm:pr-2.5 hidden cursor-pointer" />
 </div>
 
-<div class="hidden" id="search-container">
-    <SearchComponent id="search" className="pagefind-ui" />
+<div id="shutter" class="">
+    <div class="hidden relative" id="search-container">
+        <SearchComponent id="search" className="pagefind-ui" />
+    </div>
+    <Icon id="search-icon-close" name="mdi:window-close" class="text-[32px] sm:text-[36px] text-white hidden cursor-pointer fixed right-3.5 top-3.5" />
 </div>
 
 <script is:inline>
     document.addEventListener('astro:page-load',  () => {
+        const shutter = document.getElementById("shutter");
         const searchIcon = document.getElementById("search-icon");
         const searchIconClose = document.getElementById("search-icon-close");
         const searchBar = document.getElementById("search-container");
 
         const toggleSearchItems = () => {
+            shutter.classList.toggle("shutter");
             searchIcon.classList.toggle("hidden");
             searchBar.classList.toggle("hidden")
             searchIconClose.classList.toggle("hidden")
@@ -43,9 +60,12 @@ import SearchComponent from "astro-pagefind/components/Search";
 
         searchIcon.addEventListener("click", () => {
             toggleSearchItems();
+            document.querySelector("#search .pagefind-ui__search-input").focus();
+            document.body.style.overflow = "hidden";
         });
-
+        
         searchIconClose.addEventListener("click", () => {
+            document.body.style.overflow = "auto";
             toggleSearchItems();
         });
     })

@@ -70,7 +70,7 @@ const authorData = WRITERS[author as keyof typeof WRITERS]
 					</div>
 					<h1 class="text-[2.25rem] !my-6 sm:mb-5 sm:mt-3" title={title}>{title}</h1>
 					<div class="flex justify-center mb-6">
-						<a target="_blank" class="text-current" href="https://dev-sharif-md-minhaz.netlify.app">
+						<a target="_blank" class="text-current" href={authorData.url}>
 							<Profile data={authorData} />
 						</a>
 					</div>

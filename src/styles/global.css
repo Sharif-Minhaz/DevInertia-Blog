@@ -215,8 +215,7 @@ hr {
 /* ------------- astro pagefind start --------------- */
 #search {
 	background-color: white;
-	border-bottom-right-radius: 15px;
-	border-bottom-left-radius: 15px;
+	border-radius: 15px;
 }
 
 .dark #search {
@@ -229,8 +228,12 @@ hr {
 
 .dark #search input {
 	background-color: var(--dark-lite);
-	border-color: #181818;
+	border-color: #363636;
 	color: #ededed;
+}
+
+.dark #shutter {
+	background-color: rgba(70, 70, 70, 0.483);
 }
 
 .dark #search input:focus-visible {

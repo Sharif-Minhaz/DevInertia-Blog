@@ -5,7 +5,7 @@ layout: ../layouts/MainLayout.astro
 
 <main class="w-[920px]">
 <!-- banner image starts here  -->
-<img src="/about/banner1.png" width="100%">
+<img alt="sharif md. minhaz" data-pagefind-meta="image[src], image_alt[alt]" src="/about/banner1.png" width="100%">
 <!-- banner image ends here  -->
 
 <h1 class="mt-5 mb-3 text-4xl"> 👋 Hello, I'm Sharif Md. Minhazur Rahman Rabbi </h1>

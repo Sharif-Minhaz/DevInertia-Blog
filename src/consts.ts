@@ -16,9 +16,11 @@ export const WRITERS = {
 	minhaz: {
 		name: "Sharif Md. Minhaz",
 		avatar: "/avatars/minhaz.jpg",
+		url: "https://dev-sharif-md-minhaz.netlify.app",
 	},
 	astro: {
 		name: "Astro Org.",
 		avatar: "/avatars/astro.png",
+		url: "https://astro.build/",
 	},
 };
