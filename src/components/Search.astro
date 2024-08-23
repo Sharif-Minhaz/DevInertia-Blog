@@ -21,10 +21,6 @@ import SearchComponent from "astro-pagefind/components/Search";
         background-color: rgb(0 0 0 / 0.8);
     }
 
-    .dark #shutter {
-        background-color: red !important;
-    }
-
     @media (max-width: 880px) {
         #search-container {
             top: 70px;
@@ -37,7 +33,7 @@ import SearchComponent from "astro-pagefind/components/Search";
     <Icon id="search-icon" name="mdi:search" class="sm:pr-2.5 cursor-pointer" />
 </div>
 
-<div id="shutter" class="">
+<div id="shutter" class="z-30">
     <div class="hidden relative" id="search-container">
         <SearchComponent id="search" className="pagefind-ui" />
     </div>
@@ -53,7 +49,6 @@ import SearchComponent from "astro-pagefind/components/Search";
 
         const toggleSearchItems = () => {
             shutter.classList.toggle("shutter");
-            searchIcon.classList.toggle("hidden");
             searchBar.classList.toggle("hidden")
             searchIconClose.classList.toggle("hidden")
         }

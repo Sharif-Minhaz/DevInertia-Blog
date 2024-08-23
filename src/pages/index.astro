@@ -1,33 +1,54 @@
 ---
+import SubscriptionBox from '../components/SubscriptionBox';
 import MainLayout from '../layouts/MainLayout.astro';
+import HomeBlogs from "../components/HomeBlogs.astro";
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import blogIntroImg from "../../src/assets/images/tourist-man.webp";
+
+const posts = await getCollection('blog');
+const recentBlogs = posts.slice(0,3);
+const suggestedBlogs = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0,3);
 ---
+
+<style>
+	main {
+		width: 1200px;
+	}
+
+	.morph-img {
+		-webkit-animation: morph 15s ease-in-out infinite;
+    	animation: morph 15s ease-in-out infinite;
+	}
+
+	@keyframes morph {
+		0% {
+			border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+		}
+		50% {
+			border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+		}
+		100% {
+			border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+		}
+	}
+</style>
 
 <MainLayout title="DEV Inertia">
 	<main>
-		<h1>👋 Welcome, Coders!</h1>
-		<p>
-			Thank you for visiting our blog platform, where coding meets creativity. This space is dedicated to
-			sharing insights, tutorials, and thoughts on everything related to web development and programming.
-		</p>
-		<p>
-			Our platform is built using <a href="https://astro.build/">Astro</a>, a modern static site builder 
-			that allows for fast and efficient website creation. Feel free to explore and take advantage of the 
-			resources we provide.
-		</p>
-		<p>Here are some ways to get started on your journey with us:</p>
-		<ul>
-			<li>Check out the latest posts on our <code>blog</code> page.</li>
-			<li>Learn about our authors in the <code>About Us</code> section.</li>
-		</ul>
-		<p>
-			We hope you find our content both educational and inspiring. If you have any questions or need support, 
-			don't hesitate to <a href="https://docs.astro.build/">consult the documentation</a> or 
-			<a href="https://astro.build/chat">join our Discord community</a>.
-		</p>
-		<p>
-			Looking for more coding inspiration? Check out other awesome blogs and projects by talented developers 
-			across the globe!
-		</p>
+		<div class="flex flex-col sm:flex-row items-center gap-[40px] sm:gap-[30px] md:gap-[70px] mb-[90px]">
+			<div class="intro-details order-2 sm:order-1">
+				<h1 class="text-[40px] sm:text-[50px] text-center sm:text-left">Hi, I'm <span class="text-[#6A4EE9]">Sharif Md. Minhaz</span> 👋</h1>
+				<p class="mt-10 mb-8">I'm a <strong>Full-Stack developer</strong> in Bangladesh. I like working on the back-end of the web. This is my site, <strong>DEV Inertia</strong> Where I blog, share and write tutorials. Be sure to check it out..</p>
+				<h2 class="text-[22px] font-semibold mb-3">Let's connect</h2>
+				<SubscriptionBox client:load />
+			</div>
+			<div class="intro-img order-1 sm:order-2 mt-5 sm:mt-auto">
+				<Image class="morph-img w-[250px] sm:w-[800px]" src={blogIntroImg} alt="blogs intro" />
+			</div>
+		</div>
+		<hr>
+		<HomeBlogs className="mb-14 mt-9" heading="Recent Blogs" data={recentBlogs} />
+		<HomeBlogs heading="Suggested Blogs" data={suggestedBlogs} />
 	</main>
-
 </MainLayout>
