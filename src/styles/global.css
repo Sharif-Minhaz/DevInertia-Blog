@@ -291,6 +291,9 @@ hr {
 }
 
 /* ------------- astro pagefind end--------------- */
+.Toastify__toast-body {
+	font-size: 16px;
+}
 
 @media (max-width: 720px) {
 	body {

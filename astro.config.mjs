@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 import pagefind from "astro-pagefind";
 import icon from "astro-icon";
 
-import preact from "@astrojs/preact";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,6 +31,6 @@ export default defineConfig({
 				],
 			},
 		}),
-		preact(),
+		react(),
 	],
 });
