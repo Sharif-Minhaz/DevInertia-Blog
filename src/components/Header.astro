@@ -4,15 +4,22 @@ import { NAV_LINKS, SITE_TITLE } from '../consts';
 import { Icon } from 'astro-icon/components';
 import Search from './Search.astro';
 import ThemeSwitcher from "./ThemeSwitcher";
+import logo from "../assets/images/logo.webp";
+import { Image } from 'astro:assets';
 ---
 
 <header>
 	<nav class="h-[78px]">
-		<h2 class="font-semibold"><a href="/">{SITE_TITLE}</a></h2>
+		<h2 class="font-semibold">
+			<a href="/">
+				<span class="sm:inline hidden">{SITE_TITLE}</span>
+				<Image class="sm:hidden inline-block w-[43px]" src={logo} alt="Dev Inertia">
+			</a>
+		</h2>
 		<div class="internal-links">
 			{
 				NAV_LINKS.map((navLink) => (
-					<HeaderLink href={navLink.url} class="mt-[17px] sm:mt-0">
+					<HeaderLink href={navLink.url} class="px-1.5 py-[18px] sm:p-[1em_0.5em] mt-[17px] sm:mt-0">
 						<span class="hidden sm:inline">{navLink.name}</span>
 						<span class="sm:hidden inline">
 							<Icon class="text-[25px] mb-1" name={navLink.icon} />
@@ -21,7 +28,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 				))
 			}
 		</div>
-		<div class="flex gap-2 items-center">
+		<div class="flex sm:gap-2 items-center">
 			<Search />
 			<ThemeSwitcher client:load />
 			<a class="hidden mt-1 sm:flex !pl-0"href="https://dev-sharif-md-minhaz.netlify.app" target="_blank">
@@ -54,7 +61,6 @@ import ThemeSwitcher from "./ThemeSwitcher";
 		justify-content: space-between;
 	}
 	nav a {
-		padding: 1em 0.5em;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;

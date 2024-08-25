@@ -303,9 +303,14 @@ hr {
 	main {
 		padding: 1em;
 	}
+}
 
-	#search .pagefind-ui__drawer {
-		height: auto;
-		overflow-y: unset;
+@media (max-width: 500px) {
+	h2 {
+		font-size: 27px !important;
+	}
+
+	h3 {
+		font-size: 25px !important;
 	}
 }

@@ -44,7 +44,7 @@ const suggestedBlogs = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
 				<SubscriptionBox client:load />
 			</div>
 			<div class="intro-img order-1 sm:order-2 mt-5 sm:mt-auto">
-				<Image class="morph-img w-[250px] sm:w-[800px]" src={blogIntroImg} alt="blogs intro" />
+				<Image class="morph-img w-[250px] sm:w-[800px]" draggable={false} src={blogIntroImg} alt="blogs intro" />
 			</div>
 		</div>
 		<hr>

@@ -29,7 +29,6 @@ const { page } = Astro.props;
 	.content-box {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 2rem;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
@@ -80,9 +79,6 @@ const { page } = Astro.props;
 		margin-bottom: 15px;
 	}
 	@media (max-width: 720px) {
-		.content-box {
-			gap: 0.5em;
-		}
 		.content-box .content {
 			width: 100%;
 			text-align: center;
@@ -103,7 +99,7 @@ const { page } = Astro.props;
 <MainLayout title="DEV Inertia | Blog">
 	<main>
 		<section>
-			<div class="content-box">
+			<div class="content-box gap-4 sm:gap-[2rem]">
 				{
 					page.data?.map((post) => (
 						<div class="content">

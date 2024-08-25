@@ -16,8 +16,7 @@ const authorData = WRITERS[author as keyof typeof WRITERS]
 <style>
 	main {
 		width: calc(100% - 2em);
-		max-width: 100%;
-		margin: 0;
+		margin: auto;
 	}
 	.hero-image {
 		width: 100%;
@@ -47,6 +46,22 @@ const authorData = WRITERS[author as keyof typeof WRITERS]
 	}
 	.last-updated-on {
 		font-style: italic;
+	}
+
+	@media (max-width: 500px) {
+		main {
+			width: 100%;
+		}
+
+		main h1 {
+			font-size: 26px;
+		}
+
+		.prose {
+			width: 100%;
+			max-width: 100%;
+			padding-inline: 0;
+		}
 	}
 </style>
 
