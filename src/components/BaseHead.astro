@@ -12,7 +12,7 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/home.webp' } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -31,7 +31,10 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <!-- Primary Meta Tags -->
 <title>{title ? title : "DEV Inertia | About Us"}</title>
 <meta name="title" content={title} />
+<meta name="author" content="Sharif Md. Minhazur Rahman Rabbi">
+<meta name="keywords" content="blogs, solutions, web development, dev inertia, dev inertia blog, debugging, problem solutions">
 <meta name="description" content={description} />
+
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
