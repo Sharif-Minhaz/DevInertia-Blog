@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_DESCRIPTION } from "../consts";
+import ScrollToTop from "../components/ScrollToTop.astro";
 
 const { title } = Astro.props;
 ---
@@ -16,6 +17,7 @@ const { title } = Astro.props;
 		<Header />
 		<!-- content here -->
 		<slot />
+		<ScrollToTop />
 		<Footer />
 	</body>
 </html>

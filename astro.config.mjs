@@ -28,6 +28,7 @@ export default defineConfig({
 					"chevron-double-left",
 					"search",
 					"window-close",
+					"arrow-top",
 				],
 			},
 		}),

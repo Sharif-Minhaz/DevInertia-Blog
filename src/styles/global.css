@@ -37,6 +37,10 @@
 	font-display: swap;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Atkinson', sans-serif;
 	margin: 0;
@@ -312,5 +316,11 @@ hr {
 
 	h3 {
 		font-size: 25px !important;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
 	}
 }

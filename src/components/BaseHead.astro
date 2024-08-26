@@ -28,6 +28,9 @@ const { title, description, image = '/home.webp' } = Astro.props;
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
+<!-- Auto discovery rss -->
+<link rel="alternate" type="application/rss+xml" title={title} href={new URL("rss.xml", Astro.site)} />
+
 <!-- Primary Meta Tags -->
 <title>{title ? title : "DEV Inertia | About Us"}</title>
 <meta name="title" content={title} />
