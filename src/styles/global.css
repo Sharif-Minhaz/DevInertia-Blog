@@ -39,6 +39,7 @@
 
 html {
 	scroll-behavior: smooth;
+
 }
 
 body {
@@ -316,6 +317,14 @@ hr {
 
 	h3 {
 		font-size: 25px !important;
+	}
+
+	#search .pagefind-ui__drawer {
+		height: calc(100vh - 130px);
+	}
+
+	#search .pagefind-ui__result-inner {
+		padding-left: 14px;
 	}
 }
 
