@@ -18,7 +18,7 @@ const { title, description, image = '/home.webp' } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" sizes="32x32" href="/favicon.ico" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
@@ -38,6 +38,9 @@ const { title, description, image = '/home.webp' } = Astro.props;
 <meta name="keywords" content="blogs, solutions, web development, dev inertia, dev inertia blog, debugging, problem solutions">
 <meta name="description" content={description} />
 
+<!-- addtional -->
+<meta name="google-site-verification" content="m20n81BdlXtzqqUb3KANuMB7J0V0UYw8MHnXdSt5XDw" />
+<link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
