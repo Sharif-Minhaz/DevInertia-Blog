@@ -34,7 +34,7 @@ const data = uniqueTags.map((tag) => {
     <main>
         <h2>Available Tags</h2>
         <div class="flex flex-wrap gap-3 mt-8 mb-10">
-            {uniqueTags.map((tag:string) => <a href={`#${tag}`}><span class="inline-flex text-[18px] px-4 py-1 items-center justify-center border text-slate-600 border-slate-300 dark:border-slate-700 dark:text-slate-300 rounded-full">#{tag}</span></a>)}
+            {data.map((tagInfo) => <a href={`#${tagInfo.tagName}`}><span class="bg-white hover:bg-gray-200 transition-all duration-500 rounded-lg inline-flex text-[18px] px-4 py-1 items-center justify-center border text-slate-600 border-slate-200 dark:border-slate-700 dark:text-slate-300">{tagInfo.tagName} ({tagInfo.posts?.length})</span></a>)}
         </div>
         <hr />
         <div class="mt-8">
