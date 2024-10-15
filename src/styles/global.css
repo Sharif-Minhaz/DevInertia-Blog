@@ -134,7 +134,9 @@ p {
 	margin-bottom: 2em;
 }
 
-.prose p:has(+ ul) {
+.prose p:has(+ ul),
+.prose p:has(+ ol),
+.prose p:has(+ div > pre) {
 	margin-bottom: 1em;
 }
 
@@ -223,6 +225,21 @@ hr {
 .dark footer {
 	background: var(--dark-default) !important;
 	color: var(--color-dark) !important;
+}
+
+.copy-code {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #3730a3;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.75rem;
+	line-height: 1rem;
+	border-top-right-radius: 8px;
+}
+
+.copy-code:hover {
+	background-color: #312e81;
 }
 
 /* ------------- astro pagefind start --------------- */
