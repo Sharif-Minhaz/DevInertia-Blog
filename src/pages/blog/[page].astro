@@ -1,22 +1,21 @@
 ---
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import MainLayout from '../../layouts/MainLayout.astro';
-import type { PaginateFunction } from 'astro';
-import Pagination from '../../components/Pagination.astro';
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import type { PaginateFunction } from "astro";
+import Pagination from "../../components/Pagination.astro";
 
-const FIRST_PATH = "blog"
+const FIRST_PATH = "blog";
 
-export async function getStaticPaths({paginate}:{paginate: PaginateFunction}) {
-	const posts = (await getCollection('blog')).sort(
-		(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+	const posts = (await getCollection("blog")).sort(
+		(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 	);
 
 	return paginate(posts, {
 		pageSize: 5,
-	})
+	});
 }
-
 
 const { page } = Astro.props;
 ---
@@ -92,7 +91,6 @@ const { page } = Astro.props;
 		.content-box .content:not(:first-child) .parent {
 			height: auto;
 		}
-
 	}
 </style>
 
@@ -103,11 +101,19 @@ const { page } = Astro.props;
 				{
 					page.data?.map((post) => (
 						<div class="content">
-							<a href={`/blog/view/${post.slug}/`}>
+							<a href={`/blog/view/${post.slug}`}>
 								<div class="parent">
-									<img data-pagefind-meta="image[src], image_alt[alt]" width={720} class="object-cover h-full" src={post.data.heroImage} alt="" />
+									<img
+										data-pagefind-meta="image[src], image_alt[alt]"
+										width={720}
+										class="object-cover h-full"
+										src={post.data.heroImage}
+										alt=""
+									/>
 								</div>
-								<h4 class="line-clamp-2 title" title={post.data.title}>{post.data.title}</h4>
+								<h4 class="line-clamp-2 title" title={post.data.title}>
+									{post.data.title}
+								</h4>
 								<p class="date">
 									<FormattedDate date={post.data.pubDate} />
 								</p>
@@ -117,13 +123,13 @@ const { page } = Astro.props;
 				}
 			</div>
 			<div class="flex justify-center mt-9">
-				<Pagination 
-					length={page.lastPage} 
-					currentUrl={page.url.current} 
-					currentPage={page.currentPage} 
-					firstUrl={`/${FIRST_PATH}`} 
-					prevUrl={page.url.prev} 
-					nextUrl={page.url.next} 
+				<Pagination
+					length={page.lastPage}
+					currentUrl={page.url.current}
+					currentPage={page.currentPage}
+					firstUrl={`/${FIRST_PATH}`}
+					prevUrl={page.url.prev}
+					nextUrl={page.url.next}
 					lastUrl={`/${FIRST_PATH}/${page.lastPage}`}
 				/>
 			</div>

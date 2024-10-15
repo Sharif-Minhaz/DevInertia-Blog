@@ -1,18 +1,19 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-import MainLayout from './MainLayout.astro';
-import {WRITERS} from "../consts"
-import Profile from '../components/Profile.astro';
-import Tags from '../components/Tags.astro';
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import MainLayout from "./MainLayout.astro";
+import { WRITERS } from "../consts";
+import Profile from "../components/Profile.astro";
+import Tags from "../components/Tags.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
-const { title, pubDate, updatedDate, heroImage, description, author, tags } = Astro.props;
+const { title, pubDate, updatedDate, heroImage, description, author, tags, minutesRead } =
+	Astro.props;
 
-const authorData = WRITERS[author as keyof typeof WRITERS]
-
+const authorData = WRITERS[author as keyof typeof WRITERS];
 ---
+
 <style>
 	main {
 		width: calc(100% - 2em);
@@ -65,11 +66,21 @@ const authorData = WRITERS[author as keyof typeof WRITERS]
 	}
 </style>
 
-<MainLayout title={`DEV Inertia | ${title}`} description={description} >
+<MainLayout title={`DEV Inertia | ${title}`} description={description}>
 	<main>
 		<article>
 			<div class="hero-image">
-				{heroImage && <img data-pagefind-meta="image[src], image_alt[alt]" width={1020} height={510} src={heroImage} alt="" />}
+				{
+					heroImage && (
+						<img
+							data-pagefind-meta="image[src], image_alt[alt]"
+							width={1020}
+							height={510}
+							src={heroImage}
+							alt=""
+						/>
+					)
+				}
 			</div>
 			<div id="blog-body" class="prose">
 				<div class="title">
@@ -84,7 +95,12 @@ const authorData = WRITERS[author as keyof typeof WRITERS]
 						}
 					</div>
 					<h1 class="text-[2.25rem] !my-6 sm:mb-5 sm:mt-3" title={title}>{title}</h1>
-					<div class="flex justify-center mb-6">
+					<div class="flex items-center flex-wrap gap-6 justify-center mb-6">
+						<span
+							class="text-gray-600 inline-flex items-center text-[18px] before:content-[''] before:mr-1.5 before:mb-0.5 before:size-[7px] before:bg-gray-500 before:rounded-full"
+						>
+							{minutesRead}
+						</span>
 						<a target="_blank" class="text-current" href={authorData.url}>
 							<Profile data={authorData} />
 						</a>
